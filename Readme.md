@@ -4,7 +4,7 @@ This project is a simple movie database application built with PHP and MySQL. It
 
 ## Screenshot
 ![Image1](https://raw.githubusercontent.com/IrfanAnsarii/movies/refs/heads/main/img/movies.png)
-![Image1](https://raw.githubusercontent.com/IrfanAnsarii/movies/refs/heads/main/img/movies1.png)
+![Image2](https://raw.githubusercontent.com/IrfanAnsarii/movies/refs/heads/main/img/movies1.png)
 
 ## Project Structure
 
