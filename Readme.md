@@ -3,8 +3,8 @@
 This project is a simple movie database application built with PHP and MySQL. It allows users to manage movies, directors, genres, and actors. The application provides functionalities to add, edit, delete, and view records in the database.
 
 ## Screenshot
-![Image1]()
-![Image1]()
+![Image1](https://raw.githubusercontent.com/IrfanAnsarii/movies/refs/heads/main/img/movies.png)
+![Image1](https://raw.githubusercontent.com/IrfanAnsarii/movies/refs/heads/main/img/movies1.png)
 
 ## Project Structure
 
