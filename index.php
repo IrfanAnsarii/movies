@@ -33,14 +33,25 @@ $result_bottom_rated = $link->query($sql_bottom_rated);
 $bottom_rated_movies = $result_bottom_rated->fetch_all(MYSQLI_ASSOC);
 ?>
 
+
 <!-- Hero Section -->
-<section class="hero-section text-center text-white d-flex align-items-center justify-content-center" style="background: url('img/hero.webp') no-repeat center center/cover; height: 100vh;">
+<section class="hero-section text-center text-white d-flex align-items-center justify-content-center" style="background: url('img/hero.webp') no-repeat center center/cover; height: 70vh;">
     <div class="container">
     <h1 class="display-4">Welcome to Movie Explorer</h1>
         <p class="lead">Discover and review your favorite movies</p>
         <a href="movies.php" class="btn btn-primary btn-lg">Explore Movies</a>
     </div>
 </section>
+
+<style>
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+</style>
 
 <!-- Top 3 Rated Movies Section -->
 <section class="top-rated-movies-section py-5">

@@ -16,10 +16,6 @@ if (isset($_GET['search'])) {
             GROUP BY m.movie_id";
     $stmt = $link->prepare($sql);
     $stmt->bind_param("ssss", $search, $search, $search, $search);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $movies = $result->fetch_all(MYSQLI_ASSOC);
-    $stmt->close();
 } else {
     $sql = "SELECT m.movie_id, m.title, m.release_date, m.duration, g.genre_name, d.name as director_name, m.rating, GROUP_CONCAT(a.name SEPARATOR ', ') as actors
             FROM Movies m
@@ -28,9 +24,12 @@ if (isset($_GET['search'])) {
             LEFT JOIN MovieActors ma ON m.movie_id = ma.movie_id
             LEFT JOIN Actors a ON ma.actor_id = a.actor_id
             GROUP BY m.movie_id";
-    $result = $link->query($sql);
-    $movies = $result->fetch_all(MYSQLI_ASSOC);
+    $stmt = $link->prepare($sql);
 }
+
+$stmt->execute();
+$result = $stmt->get_result();
+$movies = $result->fetch_all(MYSQLI_ASSOC);
 ?>
 
 <style>
@@ -102,7 +101,7 @@ if (isset($_GET['search'])) {
 
 <main class="container mt-4">
     <h2 class="text-center mb-4">🎥 Explore Movies</h2>
-    <form method="get" action="index.php" class="mb-4">
+    <form method="get" action="movies.php" class="mb-4">
         <div class="input-group">
             <input type="text" class="form-control" name="search" placeholder="Search by title, genre, director, or actor" value="<?= htmlspecialchars($_GET['search'] ?? '', ENT_QUOTES) ?>">
             <div class="input-group-append">
